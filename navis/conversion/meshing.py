@@ -162,7 +162,7 @@ def _mesh_from_voxels_single(voxels, spacing=(1, 1, 1), step_size=1):
     # (newer versions of skimage have a "marching cubes" function and
     # the marching_cubes_lewiner is deprecreated)
     marching_cubes = getattr(measure, 'marching_cubes',
-                             getattr(measure, 'marching_cubes_lewiner', None))
+                             getattr(measure, 'marching_cubes', None))
     verts, faces, normals, values = marching_cubes(mat,
                                                    level=.5,
                                                    step_size=step_size,
